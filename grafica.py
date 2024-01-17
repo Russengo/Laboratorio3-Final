@@ -20,6 +20,9 @@ def validar_credenciales():
     else:
         messagebox.showerror("Error de inicio de sesión", "Credenciales inválidas. Inténtalo nuevamente.")
 
+def salir():
+    root.destroy() #Cierra ventana principal
+
 def ventana_principal():
     root.withdraw()  # Ocultar la ventana de inicio de sesión
 
@@ -92,6 +95,11 @@ def ventana_principal():
     # Cuadro de texto para mostrar las tareas
     texto_tareas = tk.Text(ventana, width=40, height=10)
     texto_tareas.pack()
+
+    # Barra de desplazamiento vertical
+    scrollbar = tk.Scrollbar(ventana, command=texto_tareas.yview)
+    scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+    texto_tareas.config(yscrollcommand=scrollbar.set)
 
     ventana.mainloop()
 
