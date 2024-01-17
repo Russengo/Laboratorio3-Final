@@ -12,7 +12,7 @@ def validar_credenciales():
     usuario = entrada_usuario.get()
     contraseña = entrada_contraseña.get()
 
-    usuario_obj = Usuario(None, None, None, None, None, contraseña)  # Creamos un objeto Usuario para utilizar su método autenticar
+    usuario_obj = Usuario(None, None, None, None, None, contraseña)  # Crea objeto usuario para usar la autenticaciòn
     if usuario_obj.autenticar(usuario, contraseña):
         usuario_autenticado = usuario
         messagebox.showinfo("Inicio de sesión exitoso", f"Bienvenido, {usuario}!")
