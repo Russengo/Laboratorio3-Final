@@ -13,6 +13,12 @@ class Tarea(BaseModel):
     titulo: str
     descripcion: str
 
+#Aviso del server
+@app.get("/")
+def index():
+    return {"message" : "Si funciona cabezòn."}
+
+
 @app.post("/login")
 async def login(credenciales: Credenciales):
     if admin_tarea.autenticar(credenciales.nombre, credenciales.contraseña):
